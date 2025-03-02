@@ -9,7 +9,6 @@ from models import Company, Dev, Freebie, Base
 engine = create_engine('sqlite:///freebies.db')
 
 # Create tables if they don't exist
-
 Base.metadata.create_all(engine)
 
 # Create a session
