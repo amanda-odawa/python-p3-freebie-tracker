@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from models import Company, Dev, Freebie, Base
 
-# Create database engine
+# Database engine
 engine = create_engine('sqlite:///freebies.db')
 
 # Create tables if they don't exist
@@ -15,21 +15,21 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# Create sample companies
+# Sample companies
 nvidia = Company(name='NVIDIA', founding_year=1993)
 zoom = Company(name='Zoom Video Communications', founding_year=2011)
 intel = Company(name='Intel', founding_year=1968)
 adobe = Company(name='Adobe', founding_year=1982)
 tesla = Company(name='Tesla', founding_year=2003)
 
-# Create sample developers
+# Sample developers
 alice = Dev(name='Alice')
 bob = Dev(name='Bob')
 charlie = Dev(name='Charlie')
 pancakes = Dev(name='Pancakes')
 amanda = Dev(name='Amanda')
 
-# Create sample freebies
+# Sample freebies
 freebie1 = Freebie(item_name='T-Shirt', value=20, company=nvidia, dev=alice)  
 freebie2 = Freebie(item_name='Backpack', value=50, company=zoom, dev=bob)  
 freebie3 = Freebie(item_name='Wireless Mouse', value=30, company=intel, dev=charlie)  
